@@ -1,4 +1,9 @@
+@layer base {
+  body {
+    @apply bg-primary text-white leading-loose;
+  }
+}
+
 @tailwind base;
-  @tailwind components;
-  @tailwind utilities;
-  
+@tailwind components;
+@tailwind utilities;
