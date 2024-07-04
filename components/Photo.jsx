@@ -40,9 +40,9 @@ const Photo = () => {
           xmlns="http://www.w3.org/2000/svg"
         >
           <motion.circle
-            cx="253 "
+            cx="230"
             cy="253"
-            r="200"
+            r="260"
             stroke="#00ff99"
             strokeWidth="4"
             strokeLinecap="round"
