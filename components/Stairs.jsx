@@ -27,20 +27,20 @@ const Stairs = () => {
     creating a staggered effect with increaseing delay for each subsequent step.*/}
     {[...Array(6)].map((_, index) => {
        return (
-     <motion.div 
-        key={index}
-        variants={StairAnimation}
-        initial="initial"
-        animate="animate"
-        exit="exit"
-        transition={{
-            duration : 0.4,
-            ease : "easeInOut",
-            delay : reversedIndex(index) * 0.1,
-        }}
-        className="h-full w-full bg-white relative"
-        />
-);
+         <motion.div
+           key={index}
+           variants={StairAnimation}
+           initial="initial"
+           animate="animate"
+           exit="exit"
+           transition={{
+             duration: 0.4,
+             ease: "easeInOut",
+             delay: reversedIndex(index) * 0.1,
+           }}
+           className="h-full w-full bg-green-800 relative"
+         />
+       );
     })}
     </>
   );
