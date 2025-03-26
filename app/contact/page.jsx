@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
@@ -10,12 +10,28 @@ import { FaChevronDown } from "react-icons/fa";
 const Contact = () => {
   const [selectedReason, setSelectedReason] = useState("");
   const [customReason, setCustomReason] = useState("");
+  const [finalSubject, setFinalSubject] = useState("");
   const [name, setName] = useState("");
   const [phone, setPhone] = useState("");
   const [email, setEmail] = useState("");
   const [message, setMessage] = useState("");
   const [loading, setLoading] = useState(false);
   const [emailError, setEmailError] = useState(false);
+
+  const handleSubjectChange = (reason) => {
+    setSelectedReason(reason);
+    if (reason === "custom") {
+      setFinalSubject(customReason);
+    } else {
+      setFinalSubject(customReason);
+    }
+  };
+
+  useEffect(() => {
+    setFinalSubject(
+      selectedReason === "custom" ? customReason : selectedReason
+    );
+  }, [selectedReason, customReason]);
 
   const handleEmailChange = (e) => {
     const value = e.target.value;
@@ -40,8 +56,8 @@ const Contact = () => {
     e.preventDefault();
     setLoading(true);
 
-    const subject = selectedReason === "custom" ? customReason : selectedReason;
-    const formData = { name, email, phone, message, subject };
+    // const subject = selectedReason === "custom" ? customReason : selectedReason;
+    const formData = { name, email, phone, message, subject: finalSubject };
 
     try {
       const response = await fetch("/api/contact", {
@@ -130,7 +146,7 @@ const Contact = () => {
                         }`}
                         onClick={(e) => {
                           e.preventDefault();
-                          setSelectedReason(service);
+                          handleSubjectChange(service);
                           setCustomReason("");
                         }}
                       >
@@ -144,7 +160,7 @@ const Contact = () => {
                     }`}
                     onClick={(e) => {
                       e.preventDefault();
-                      setSelectedReason("custom");
+                      handleSubjectChange("custom");
                     }}
                   >
                     Other <FaChevronDown className="text-sm" />
@@ -156,7 +172,10 @@ const Contact = () => {
                     placeholder="Enter your subject..."
                     className="w-full mt-3 p-3 border border-gray-400 rounded-lg bg-[#dbeff1] text-gray-700 focus:ring-2 focus:ring-blue-500"
                     value={customReason}
-                    onChange={(e) => setCustomReason(e.target.value)}
+                    onChange={(e) => {
+                      setCustomReason(e.target.value);
+                      setFinalSubject(e.target.value); //Updates the final sebject in real time
+                    }}
                   />
                 )}
               </div>

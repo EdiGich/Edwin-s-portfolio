@@ -21,23 +21,26 @@ export async function POST(req) {
       });
     }
 
-    const { name, email, message } = body;
+    const { name, email, message, phone, subject} = body;
 
-    if (!name || !email || !message) {
-      return new Response(JSON.stringify({ error: "All fields are required" }), {
+    if (!name || !email  || !message) {
+      return new Response(JSON.stringify({ error: "Name, email, and message are required" }), {
         status: 400,
         headers: { "Content-Type": "application/json" },
       });
     }
 
+    const emailSubject = subject ? subject : `Contact Form Submission from ${name}`;
+
     const data = await resend.emails.send({
       from: "onboarding@resend.dev",
       to: "edwingichira801@gmail.com",
-      reply_to: email,
-      subject: `Contact Form Submission from ${name}`,
+      replyTo: email,
+      subject: emailSubject,
       html: `
         <p><strong>Name:</strong> ${name}</p>
         <p><strong>Email:</strong> ${email}</p>
+        <p><strong>Phone:</strong> ${phone || "N/A"}</p>
         <p><strong>Message:</strong> ${message}</p>
       `,
     });
