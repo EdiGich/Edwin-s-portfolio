@@ -9,8 +9,8 @@ import Stats from '@/components/Stats';
 const Home = () => {
   return (
     <section className="h-full">
-      <div className="container mx-auto h-full">
-        <div className="flex flex-col xl:flex-row items-center justify-between xl:pt-0 xl:pb-1">
+      <div className="container h-full">
+        <div className="flex flex-col xl:flex-row items-center my-8 justify-between xl:pt-0 xl:pb-1">
           {/* text */}
           <div className="text-center xl:text-left order-2 xl:order-none">
             <span className="text-xl">Software Developer</span>
@@ -28,8 +28,9 @@ const Home = () => {
                 size="lg"
                 className="uppercase flex items-center gap-2"
               >
-                <span>Download CV</span>
-                <FiDownload className="text-xl" />
+                {/* DOWNLOAD RESUME */}
+                {/* <span>Download CV</span>
+                <FiDownload className="text-xl" /> */}
               </button>
               <div className="mb-8 xl:mb-0">
                 <Social

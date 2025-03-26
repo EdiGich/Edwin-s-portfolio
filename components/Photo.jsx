@@ -12,6 +12,7 @@ const Photo = () => {
           opacity: 1,
           transition: { delay: 2, duration: 0.4, ease: "easeIn" },
         }}
+        className="relative w-[300px] h-[300px] xl:w-[300px] xl:h-[300px]"
       >
         {/* Image */}
         <motion.div
@@ -20,29 +21,30 @@ const Photo = () => {
             opacity: 1,
             transition: { delay: 2.4, duration: 0.4, ease: "easeInOut" },
           }}
-          className="  w-[298px] h-[298px] xl:h-[498px] mix-blend-lighten absolute"
+          className="absolute inset-0 grid place-items-center mix-blend-lighten "
         >
           <Image
-            src="/assets/eduh.png"
+            src="/assets/1715224078870.png"
             priority
             quality={100}
-            fill
+            width={290}
+            height={290}
             alt=""
-            className="object-contain"
+            className="object-cover rounded-full"
           />
         </motion.div>
 
         {/* Circle */}
         <motion.svg
-          className={"w-[300px] xl:w-[306px] h-[300px] xl:h-[506px]"}
+          className={"w-[300px] xl:w-[300px] h-[300px] xl:h-[300px]"}
           fill="transparent"
-          viewBox="0 0 506 506"
+          viewBox="0 0 300 300"
           xmlns="http://www.w3.org/2000/svg"
         >
           <motion.circle
-            cx="230"
-            cy="253"
-            r="260"
+            cx="150"
+            cy="150"
+            r="150"
             stroke="#00ff99"
             strokeWidth="4"
             strokeLinecap="round"

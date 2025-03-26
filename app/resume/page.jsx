@@ -12,127 +12,121 @@ import {
 import { SiTailwindcss, SiNextdotjs, SiFlutter } from 'react-icons/si';
 
 const about = {
-  title: 'About me',
-  description: 'Lorem, ipsum dolor sit amet consectetur adipisicing.',
+  title: "About me",
+  description:
+    "I strive to integrate technology in business process automation in order to increase efficiency in carrying out business activities.",
   info: [
     {
-      fieldName: 'Name',
-      fieldValue: 'Edwin Gichira',
+      fieldName: "Name",
+      fieldValue: "Edwin Gichira",
     },
     {
-      fieldName: 'WhatsApp',
-      fieldValue: '+254751478159',
+      fieldName: "WhatsApp",
+      fieldValue: "+254751478159",
     },
     {
-      fieldName: 'Email',
-      fieldValue: 'edwingichira801@gmail.com',
+      fieldName: "Email",
+      fieldValue: "edwingichira801@gmail.com",
     },
     {
-      fieldName: 'Experience',
-      fieldValue: '3+ Years',
+      fieldName: "Experience",
+      fieldValue: "3+ Years",
     },
     {
-      fieldName: 'Nationality',
-      fieldValue: 'Kenyan',
+      fieldName: "Nationality",
+      fieldValue: "Kenyan",
     },
     {
-      fieldName: 'Freelance',
-      fieldValue: 'Available',
+      fieldName: "Freelance",
+      fieldValue: "Available",
     },
     {
-      fieldName: 'Spoken Languages',
-      fieldValue: 'English, Swahili',
+      fieldName: "Spoken Languages",
+      fieldValue: "English, Swahili",
     },
   ],
 };
 
 //experience data
 const experience = {
-  icon: '/assets/resume/icons/badge.svg',
+  icon: "/assets/resume/icons/badge.svg",
   // icon: '/public/next.svg',
-  title: 'My Experince',
-  description:
-    ' lorem sev asva as  jakyd sins aihf ah ASD URY CIA  s e urfued lorem gaus depod ferat',
+  title: "My Experince",
+  description: "I have build web applications in Django and in Next.js.",
   items: [
     {
-      company: 'DTC',
-      position: 'Full Stack Developer',
-      duration: 'May 2024 - Present',
+      company: "Delicious Tumaini Caterers",
+      position: "Web Developer",
+      duration: "September 2024 - Present",
     },
     {
-      company: 'Techbiz Limited',
-      position: 'Tech Attachee',
-      duration: 'May-August 2023',
+      company: "SwahilipotHub Foundation",
+      position: "Tech Attachee/Intern",
+      duration: "June 2024-August 2024",
     },
     {
-      company: 'Techbiz Limited',
-      position: 'Tech Attachee',
-      duration: 'May-August 2023',
-    },
-    {
-      company: 'Techbiz Limited',
-      position: 'Tech Attachee',
-      duration: 'May-August 2023',
+      company: "Techbiz Limited",
+      position: "Tech Attachee",
+      duration: "May-August 2023",
     },
   ],
 };
 
 //education data
 const education = {
-  icon: '/assets/resume/icons/cap.svg',
-  title: 'My Education',
-  description:
-    ' lorem sev asva as  jakyd sins aihf ah ASD URY CIA  s e urfued lorem gaus depod ferat',
+  icon: "/assets/resume/icons/cap.svg",
+  title: "My Education",
+  description: " Graduated with a Bsc Software Engineering",
   items: [
     {
       institution: "Murang'a University of Technology",
-      degree: 'Software Engineering',
-      duration: '2020-2024',
+      degree: "Software Engineering",
+      duration: "2020-2024",
     },
   ],
 };
 
 //skills data
 const skills = {
-  title: 'My Skills',
+  title: "My Skills",
   description:
-    'Lorem ipsum dolor sit amet consectetur adipisicing elit. Reprehenderit, nesciunt?',
+    "I have gained skills working with web technologies like Django, React.js and Next.js. I have also worked with Flutter and Kotlin for mobile app developement.",
   skillsList: [
     {
       icon: <FaHtml5 />,
-      name: 'html5',
+      name: "html5",
     },
     {
       icon: <FaCss3 />,
-      name: 'css 3',
+      name: "css 3",
     },
     {
       icon: <FaJs />,
-      name: 'javascript',
+      name: "javascript",
     },
     {
       icon: <FaReact />,
-      name: 'react.js',
+      name: "react.js",
     },
     {
       icon: <FaNodeJs />,
-      name: 'node.js',
+      name: "node.js",
     },
     {
       icon: <SiNextdotjs />,
-      name: 'next.js',
+      name: "next.js",
     },
     {
       icon: <SiTailwindcss />,
-      name: 'tailwind.css',
+      name: "tailwind.css",
     },
     {
       icon: <FaFigma />,
-      name: 'figma',
+      name: "figma",
     },
     {
       icon: <SiFlutter />,
-      name: 'Flutter & Dart',
+      name: "Flutter & Dart",
     },
   ],
 };

@@ -5,34 +5,35 @@ import Link from 'next/link';
 
 const services = [
   {
-    num: '01',
-    title: 'Web development',
+    num: "01",
+    title: "Web Development",
     description:
-      'Lorem ipsum, dolor sit amet consectetur adipisicing elit. Placeat libero voluptates doloribus odio a officiis.',
-    href: '',
+      "Building responsive, high-performance websites using modern frameworks like Next.js and Django, ensuring scalability and seamless user experience.",
+    href: "",
   },
   {
-    num: '02',
-    title: 'UI Design',
+    num: "02",
+    title: "UI Design",
     description:
-      'Lorem ipsum, dolor sit amet consectetur adipisicing elit. Placeat libero voluptates doloribus odio a officiis.',
-    href: '',
+      "Creating visually appealing and user-friendly interfaces with a focus on accessibility, consistency, and brand identity using Figma and Tailwind CSS.",
+    href: "",
   },
   {
-    num: '03',
-    title: 'Flutter App Development',
+    num: "03",
+    title: "Flutter App Development",
     description:
-      'Lorem ipsum, dolor sit amet consectetur adipisicing elit. Placeat libero voluptates doloribus odio a officiis.',
-    href: '',
+      "Developing cross-platform mobile applications using Flutter, delivering smooth performance, modern UI, and seamless integration with backend services.",
+    href: "",
   },
   {
-    num: '04',
-    title: 'Java App Development',
+    num: "04",
+    title: "Java App Development",
     description:
-      'Lorem ipsum, dolor sit amet consectetur adipisicing elit. Placeat libero voluptates doloribus odio a officiis.',
-    href: '',
+      "Building robust and scalable Java applications for desktop and backend services, leveraging frameworks like Spring Boot for enterprise solutions.",
+    href: "",
   },
 ];
+
 
 import { motion } from 'framer-motion';
 
