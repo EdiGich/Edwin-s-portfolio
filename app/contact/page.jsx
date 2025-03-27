@@ -7,15 +7,15 @@ import { Textarea } from "@/components/ui/textarea";
 import { motion } from "framer-motion";
 import {
   FaChevronDown,
-  FaPhoneAlt,
+  FaWhatsapp,
   FaEnvelope,
   FaMapMarkerAlt,
 } from "react-icons/fa";
 
 const info = [
   {
-    icon: <FaPhoneAlt />,
-    title: "Phone",
+    icon: <FaWhatsapp />,
+    title: "Phone/WhatsApp",
     description: "(+254)751 478159",
   },
   {
