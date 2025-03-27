@@ -1,114 +1,109 @@
-'use client';
-import { motion } from 'framer-motion';
-import React, { useState } from 'react';
-
-import { Swiper, SwiperSlide } from 'swiper/react';
-import 'swiper/css';
-
-import { BsArrowUpRight, BsGithub } from 'react-icons/bs';
-
+"use client";
+import { motion } from "framer-motion";
+import React from "react";
+import { BsArrowUpRight, BsGithub } from "react-icons/bs";
 import {
   Tooltip,
   TooltipContent,
   TooltipProvider,
   TooltipTrigger,
-} from '@/components/ui/tooltip';
-
-import Link from 'next/link';
-import Image from 'next/image';
-import WorkSliderBtns from '@/components/ui/WorkSliderBtns';
+} from "@/components/ui/tooltip";
+import Link from "next/link";
+import Image from "next/image";
 
 const projects = [
   {
-    num: '01',
-    category: 'frontend',
-    title: 'project 1',
+    num: "01",
+    category: "frontend",
+    title: "Project 1",
     description:
-      'Lorem ipsum dse voluptas ratione reprehenderit, ao  voluptas ratione reprehenderit, a nem saepe?',
-    stack: [{ name: 'Html 5' }, { name: 'Css 3' }, { name: 'Javascript' }],
-    image: '/assets/work/Project_1.png',
-    live: '',
-    github: '',
+      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer nec odio.",
+    stack: [{ name: "HTML 5" }, { name: "CSS 3" }, { name: "JavaScript" }],
+    image: "/assets/work/Project_1.png",
+    live: "",
+    github: "",
   },
   {
-    num: '02',
-    category: 'fullstack',
-    title: 'project 2',
+    num: "02",
+    category: "fullstack",
+    title: "Project 2",
     description:
-      'Lorem ipsum dse voluptas ratione reprehenderit, ao  voluptas ratione reprehenderit, a nem saepe?',
-    stack: [{ name: 'Next Js' }, { name: 'Tailwind' }, { name: 'Node.js' }],
-    image: '/assets/work/Project_2.png',
-    live: '',
-    github: '',
+      "Praesent libero. Sed cursus ante dapibus diam. Sed nisi. Nulla quis sem.",
+    stack: [{ name: "Next.js" }, { name: "Tailwind" }, { name: "Node.js" }],
+    image: "/assets/work/Project_2.png",
+    live: "",
+    github: "",
   },
   {
-    num: '03',
-    category: 'frontend',
-    title: 'project 3',
+    num: "03",
+    category: "frontend",
+    title: "Project 3",
     description:
-      'Lorem ipsum dse voluptas ratione reprehenderit, ao  voluptas ratione reprehenderit, a nem saepe?',
-    stack: [{ name: 'Next.Js' }, { name: 'Tailwind' }],
-    image: '/assets/work/Project_3.png',
-    live: '',
-    github: '',
+      "Duis sagittis ipsum. Praesent mauris. Fusce nec tellus sed augue semper.",
+    stack: [{ name: "Next.js" }, { name: "Tailwind" }],
+    image: "/assets/work/Project_3.png",
+    live: "",
+    github: "",
   },
 ];
 
 const Work = () => {
-  const [project, setProject] = useState(projects[0]);
-
-  const handleSlideChange = (swiper) => {
-    //get current slide index
-    const currentIndex = swiper.activeIndex;
-    //update project state based on current slide index
-    setProject(projects[currentIndex]);
-  };
-
   return (
     <motion.section
       initial={{ opacity: 0 }}
       animate={{
         opacity: 1,
-        transition: { delay: 2.4, duration: 0.4, ease: 'easeIn' },
+        transition: { delay: 2.4, duration: 0.4, ease: "easeIn" },
       }}
-      className="min-h-[80vh] flex flex-col justify-content py-12 xl:px-0"
+      className="min-h-[80vh] flex flex-col py-12 xl:px-0 relative"
     >
-      <div className="container mx-auto">
-        <div className="flex flex-col xl:flex-row xl:gap-[30px]">
-          <div className="w-full xl:w-[50%] xl:h-[460px] flex flex-col xl:justify-between order-2 xl:order-none">
-            <div className="flex flex-col gap-[30px] h-[50%]">
-              {/* outline num */}
-              <div className="text-8xl leading-none font-extrabold text-transparent text-outline">
-                {project.num}
-              </div>
-              {/* project category */}
-              <h2 className="text-[42px] font-bold leading-none text-white group-hover:text-accent transition-all duration-500 capitalize">
-                {project.category} project
+      <div className="container mx-auto relative">
+        {/* Central faint line */}
+        <div className="absolute left-1/2 top-0 w-[2px] bg-white/20 h-full transform -translate-x-1/2 hidden xl:block"></div>
+
+        {projects.map((project, index) => (
+          <div
+            key={index}
+            className={`relative flex flex-col xl:flex-row items-center gap-8 mb-16 
+              ${index % 2 === 0 ? "xl:flex-row-reverse" : ""}
+              p-4  rounded-lg 
+              border border-white/30 bg-green-900/30
+              xl:border-0 xl:bg-transparent`}
+          >
+            {/* Project Image */}
+            <div className="w-full xl:w-1/2 flex justify-center">
+              <Image
+                src={project.image}
+                width={500}
+                height={300}
+                className="rounded-lg"
+                alt={project.title}
+              />
+            </div>
+
+            {/* Connector line */}
+            <div className="absolute h-[2px] bg-white/20 w-[5%] left-1/2 top-1/2  -translate-y-1/2 -translate-x-1/2 hidden xl:block"></div>
+
+            {/* Project Details */}
+            <div className="w-full xl:w-1/2 text-center xl:text-left px-4">
+              <h2 className="text-3xl font-bold text-white capitalize">
+                {project.title}
               </h2>
-              {/* description */}
-              <p className="text-white/60">{project.description}</p>
-              {/* stack */}
-              <ul className="flex gap-4">
-                {project.stack.map((item, index) => {
-                  return (
-                    <li key={index} className="text-xl text-accent">
-                      {item.name}
-                      {/* removing the last comma */}
-                      {index !== project.stack.length - 1 && ','}
-                    </li>
-                  );
-                })}
+              <p className="text-white/60 mt-2">{project.description}</p>
+              <ul className="flex gap-4 justify-center xl:justify-start mt-2">
+                {project.stack.map((item, idx) => (
+                  <li key={idx} className="text-xl text-accent">
+                    {item.name}
+                  </li>
+                ))}
               </ul>
-              {/* border */}
-              <div className="border border-white/20"></div>
-              {/* buttons */}
-              <div className="flex items-center gap-4">
-                {/* live project buttons */}
+              {/* Buttons */}
+              <div className="flex items-center gap-4 mt-4 justify-center xl:justify-start">
                 <Link href={project.live}>
                   <TooltipProvider delayDuration={100}>
                     <Tooltip>
-                      <TooltipTrigger className="w-[70px] h-[70px] rounded-full bg-white/5 flex justify-center items-center group">
-                        <BsArrowUpRight className="text-white text-3xl group-hover:text-accent" />
+                      <TooltipTrigger className="w-[50px] h-[50px] rounded-full bg-white/5 flex justify-center items-center group">
+                        <BsArrowUpRight className="text-white text-2xl group-hover:text-accent" />
                       </TooltipTrigger>
                       <TooltipContent>
                         <p>Live project</p>
@@ -116,13 +111,11 @@ const Work = () => {
                     </Tooltip>
                   </TooltipProvider>
                 </Link>
-
-                {/* github project buttons */}
                 <Link href={project.github}>
                   <TooltipProvider delayDuration={100}>
                     <Tooltip>
-                      <TooltipTrigger className="w-[70px] h-[70px] rounded-full bg-white/5 flex justify-center items-center group">
-                        <BsGithub className="text-white text-3xl group-hover:text-accent" />
+                      <TooltipTrigger className="w-[50px] h-[50px] rounded-full bg-white/5 flex justify-center items-center group">
+                        <BsGithub className="text-white text-2xl group-hover:text-accent" />
                       </TooltipTrigger>
                       <TooltipContent>
                         <p>GitHub Repository</p>
@@ -133,40 +126,7 @@ const Work = () => {
               </div>
             </div>
           </div>
-          <div className="w-full xl:w-[50%]">
-            <Swiper
-              spaceBetween={30}
-              slidesPerView={1}
-              className="xl:h-[520px] mb-12"
-              onSlideChange={handleSlideChange}
-            >
-              {projects.map((project, index) => {
-                return (
-                  <SwiperSlide key={index} className="w-full">
-                    <div className="h-[460px] relative group flex justify-center items-center bg-orange-300/20">
-                      {/* overlay */}
-                      <div className="absolute top-0 bottom-0 w-full h-full bg-black/10 z-10"></div>
-                      {/* image */}
-                      <div className="relative w-full h-full">
-                        <Image
-                          src={project.image}
-                          fill
-                          className="object-cover"
-                          alt=""
-                        />
-                      </div>
-                    </div>
-                  </SwiperSlide>
-                );
-              })}
-              {/* slider buttons */}
-              <WorkSliderBtns
-                containerStyles="flex gap-2 absolute right-0 bottom-[calc(50%_-_22px)] xl:bottom-0 z-20 w-full justify-between xl:w-max xl:justify-none"
-                btnStyles="bg-accent text-primary justify-center items-center h-[28px] rounded"
-              />
-            </Swiper>
-          </div>
-        </div>
+        ))}
       </div>
     </motion.section>
   );
