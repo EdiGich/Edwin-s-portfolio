@@ -20,6 +20,10 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
+      <head>
+        <title>"Edwin Gichira | Portfolio"</title>
+        <link rel="icon" href="/favicon.ico" />
+      </head>
       <body className={jetbrainsMono.variable}>
         <Header />
         <StairTransition />
