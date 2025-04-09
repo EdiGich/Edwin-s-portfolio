@@ -109,6 +109,12 @@ const skills = {
     { icon: <FaFigma />, name: "figma" },
     { icon: <SiFlutter />, name: "Flutter & Dart" },
   ],
+  OtherSkills: [
+    { name: "Proficient in Linux & Windows Operating Systems" },
+    { name: "Basic Computer Hardware Maintenance" },
+    { name: "Network Configuration" },
+    { name: "Corel Draw, Ms Office suite" },
+  ],
 };
 
 const Resume = () => {
@@ -148,7 +154,7 @@ const Resume = () => {
                 <p className="max-w-[600px] text-white/60 mx-auto xl:mx-0 text-center xl:text-left">
                   {experience.description}
                 </p>
-                <ScrollArea className="h-[300px] mt-4 scrollbar-always-visible">
+                <ScrollArea className="h-[380px] mt-4 scrollbar-always-visible">
                   <ul className="grid grid-cols-1 gap-6">
                     {experience.items.map((item, index) => (
                       <li
@@ -232,6 +238,25 @@ const Resume = () => {
                           <TooltipContent>
                             <p className="capitalize">{skill.name}</p>
                           </TooltipContent>
+                        </Tooltip>
+                      </TooltipProvider>
+                    </li>
+                  ))}
+                </ul>
+
+                <h3 className="text-xl mt-5 font-semibold text-white text-center">
+                  More skills;
+                </h3>
+                <ul className="grid grid-cols-2 mt-2">
+                  {skills.OtherSkills.map((otherSkill, index) => (
+                    <li key={index}>
+                      <TooltipProvider delayDuration={100}>
+                        <Tooltip>
+                          <TooltipTrigger className="w-full h-[120px] rounded-lg">
+                            <div className="text-1xl bg-[#1a1a1e] m-2 rounded group-hover:text-accent transition-all duration-300">
+                              <p> {otherSkill.name}</p>
+                            </div>
+                          </TooltipTrigger>
                         </Tooltip>
                       </TooltipProvider>
                     </li>
