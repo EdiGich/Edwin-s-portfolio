@@ -162,7 +162,7 @@ const Work = () => {
           >
             {/* Project Slider */}
             <div className="w-full xl:w-1/2 flex justify-center">
-              <div className="w-full max-h-[500px] overflow-y-auto xl:max-h-[400px] sm:overflow-visible">
+              <div className="w-full max-h-[350px] h-[60%] overflow-y-auto xl:max-h-[400px] sm:overflow-visible">
                 <ProjectSlider images={project.images} />
               </div>
             </div>
@@ -170,7 +170,7 @@ const Work = () => {
             <div className="absolute h-[2px] bg-white/20 w-[5%] left-1/2 top-1/2 -translate-y-1/2 -translate-x-1/2 hidden xl:block"></div>
 
             {/* Project Details */}
-            <div className="w-full xl:w-1/2 text-center xl:text-left px-4">
+            <div className="w-full xl:w-1/2 text-center xl:text-left px-4 z-10">
               <h6 className="font-bold text-white capitalize">
                 {project.category}
               </h6>
