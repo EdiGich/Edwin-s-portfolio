@@ -57,8 +57,8 @@ const projects = [
       "/assets/work/ContentM_app/events.jpg",
       "/assets/work/ContentM_app/news.jpg",
     ],
-    live: "",
-    github: "",
+    live: "https://www.linkedin.com/posts/edwin-gichira-9147a8213_flutter-mobiledevelopment-getx-activity-7316031246218727425-hSOn?utm_source=share&utm_medium=member_desktop&rcm=ACoAADYLaSABWBtvVtDM9GV0cV9dl2Y-_c0Jpoo",
+    github: "https://github.com/EdiGich/dtc_content_manager/tree/main",
   },
 ];
 
