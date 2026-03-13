@@ -17,8 +17,29 @@ import Link from "next/link";
 import Image from "next/image";
 
 const projects = [
-  {
+   {
     num: "01",
+    category: "Full-Stack",
+    title: "Kuwa Makini",
+    description:
+      "A civic-tech project called 'Kuwa Makini' — An anonymous platform for reporting and tracking scam encounters.",
+    stack: [
+      { name: "NextJS" },
+      { name: "TailwindCSS" },
+      { name: "NodeJS" },
+      { name: "Supabase" },
+    ],
+    images: [
+      "/assets/work/kuwamakini/dashboardKuwaMakini.jpg",
+      "/assets/work/kuwamakini/reportScam.png",
+      "/assets/work/kuwamakini/contact.png",
+      "/assets/work/kuwamakini/guidelines.png",
+    ],
+    live: "https://kuwamakini.vercel.app/",
+    github: "https://github.com/EdiGich",
+  },
+  {
+    num: "02",
     category: "Full-Stack",
     title: "DTC Catering Website",
     description:
@@ -41,7 +62,7 @@ const projects = [
     github: "https://github.com/EdiGich/Catering",
   },
   {
-    num: "02",
+    num: "03",
     category: "Flutter Frontend · Django Backend",
     title: "DTC Content Management App",
     description:

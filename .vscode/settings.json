@@ -1,6 +1,6 @@
 {
     "reactSnippets.settings.prettierEnabled": true,
-    "editor.defaultColorDecorators": true,
+    "editor.defaultColorDecorators": "auto",
     "editor.experimentalInlineEdit.backgroundColoring": true,
     "editor.bracketPairColorization.independentColorPoolPerBracketType": true
 }

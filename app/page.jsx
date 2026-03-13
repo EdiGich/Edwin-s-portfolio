@@ -19,7 +19,7 @@ const Home = () => {
               <span className="text-accent">Edwin Gichira</span>
             </h1>
             <p className="max-w-[500px] mb-5 text-white/80">
-              I am proficient in various programming languages and technologes.
+              I am a software developer with experience in building web and mobile applications.
             </p>
             {/* btn and socials */}
             <div className="flex flex-col xl:flex-row items-center gap-8">

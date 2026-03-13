@@ -58,9 +58,14 @@ const experience = {
   description: "I have built web applications in Django and in Next.js.",
   items: [
     {
+      company: "Close the Gap Kenya",
+      position: "Operations Intern",
+      duration: "May 2025 - Dec 2025",
+    },
+    {
       company: "Delicious Tumaini Caterers",
       position: "Web Developer",
-      duration: "September 2024 - Present",
+      duration: "September 2024 - April 2025",
     },
     {
       company: "SwahilipotHub Foundation",
@@ -84,7 +89,7 @@ const education = {
     {
       institution: "Power Learn Project",
       degree: "Software Development Cohort",
-      duration: "2025 Feb - Present",
+      duration: "2025 Feb - Nov 2025",
     },
     {
       institution: "Murang'a University of Technology",
@@ -111,7 +116,7 @@ const skills = {
   ],
   OtherSkills: [
     { name: "Proficient in Linux & Windows Operating Systems" },
-    { name: "Basic Computer Hardware Maintenance" },
+    { name: "Computer Hardware Maintenance Coutesy of Close the Gap Kenya" },
     { name: "Network Configuration" },
     { name: "Corel Draw, Ms Office suite" },
   ],
