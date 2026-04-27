@@ -17,8 +17,50 @@ import Link from "next/link";
 import Image from "next/image";
 
 const projects = [
-   {
+  {
     num: "01",
+    category: "E-commerce",
+    title: "Shem Collections",
+    description:
+      "An elegant showcase for a boutique collection, highlighting products with a focus on visual appeal and ease of navigation.",
+    stack: [
+      { name: "Next.js" },
+      { name: "TailwindCSS" },
+      { name: "Framer Motion" },
+    ],
+    images: [
+      "/assets/work/shemCol/landing.png",
+      "/assets/work/shemCol/shem.png",
+      "/assets/work/shemCol/howToOrder.png",
+      "/assets/work/shemCol/location.png",
+    ],
+    live: "https://shem-col.vercel.app/",
+    github: "https://github.com/EdiGich",
+    isPrivate: true,
+  },
+  {
+    num: "02",
+    category: "Full-Stack",
+    title: "Farmi Pal",
+    description:
+      "An AI-powered agricultural assistant for Kenyan farmers, providing market prices, negotiation scripts, and localized farming lessons.",
+    stack: [
+      { name: "Next.js" },
+      { name: "Gemini AI" },
+      { name: "TailwindCSS" },
+      { name: "Framer Motion" },
+    ],
+    images: [
+      "/assets/work/farmiPal/agriTutor.png",
+      "/assets/work/farmiPal/bei.png",
+      "/assets/work/farmiPal/chat.png",
+      "/assets/work/farmiPal/surplusZones.png",
+    ],
+    live: "https://farmi-pal.vercel.app/",
+    github: "https://github.com/EdiGich/farmi-pal.git",
+  },
+  {
+    num: "03",
     category: "Full-Stack",
     title: "Kuwa Makini",
     description:
@@ -37,9 +79,31 @@ const projects = [
     ],
     live: "https://kuwamakini.vercel.app/",
     github: "https://github.com/EdiGich",
+    isPrivate: true,
+  },
+    {
+    num: "04",
+    category: "Frontend",
+    title: "Pizza Place Website",
+    description:
+      "A vibrant and interactive web application for a pizza restaurant, featuring a dynamic menu and seamless ordering experience.",
+    stack: [
+      { name: "Next.js" },
+      { name: "TailwindCSS" },
+      { name: "Framer Motion" },
+    ],
+    images: [
+      "/assets/work/milios/landing.png",
+      "/assets/work/milios/menu.png",
+      "/assets/work/milios/menuCarousel.png",
+      "/assets/work/milios/location.png",
+    ],
+    live: "https://milios-pizza.vercel.app/",
+    github: "https://github.com/EdiGich",
+    isPrivate: true,
   },
   {
-    num: "02",
+    num: "05",
     category: "Full-Stack",
     title: "DTC Catering Website",
     description:
@@ -62,7 +126,7 @@ const projects = [
     github: "https://github.com/EdiGich/Catering",
   },
   {
-    num: "03",
+    num: "06",
     category: "Flutter Frontend · Django Backend",
     title: "DTC Content Management App",
     description:
@@ -76,6 +140,49 @@ const projects = [
     ],
     live: "https://www.linkedin.com/posts/edwin-gichira-9147a8213_flutter-mobiledevelopment-getx-activity-7316031246218727425-hSOn?utm_source=share&utm_medium=member_desktop&rcm=ACoAADYLaSABWBtvVtDM9GV0cV9dl2Y-_c0Jpoo",
     github: "https://github.com/EdiGich/dtc_content_manager/tree/main",
+  },
+
+
+  {
+    num: "07",
+    category: "Frontend",
+    title: "BBQ Restaurant Website",
+    description:
+      "A sleek, modern landing page and menu system for a BBQ restaurant, designed to showcase delicious offerings and enhance brand presence.",
+    stack: [
+      { name: "React" },
+      { name: "TailwindCSS" },
+      { name: "Framer Motion" },
+    ],
+    images: [
+      "/assets/work/adamzaBBQ/landing.png",
+      "/assets/work/adamzaBBQ/menu.png",
+      "/assets/work/adamzaBBQ/carousel.png",
+    ],
+    live: "https://addamz-bbq.vercel.app/",
+    github: "https://github.com/EdiGich",
+    isPrivate: true,
+  },
+
+  {
+    num: "08",
+    category: "Frontend",
+    title: "Computer Shop Website",
+    description:
+      "A professional platform for tech services and PC components, designed to provide users with a trusted and efficient browsing experience.",
+    stack: [
+      { name: "React" },
+      { name: "TailwindCSS" },
+      { name: "Vite" },
+    ],
+    images: [
+      "/assets/work/Vicks/landing.png",
+      "/assets/work/Vicks/pcs.png",
+      "/assets/work/Vicks/TRUSTED.png",
+    ],
+    live: "https://vickscomp.vercel.app/",
+    github: "https://github.com/EdiGich",
+    isPrivate: true,
   },
 ];
 
@@ -134,9 +241,8 @@ const ProjectSlider = ({ images }) => {
               <button
                 key={idx}
                 onClick={() => setCurrentIndex(idx)}
-                className={`w-2 h-2 rounded-full ${
-                  currentIndex === idx ? "bg-green-400 w-3 h-3" : "bg-white/50"
-                }`}
+                className={`w-2 h-2 rounded-full ${currentIndex === idx ? "bg-green-400 w-3 h-3" : "bg-white/50"
+                  }`}
               />
             ))}
           </div>
@@ -162,7 +268,7 @@ const Work = () => {
             key={index}
             className={`relative flex flex-col xl:flex-row items-center gap-8 mb-16 
               ${index % 2 === 0 ? "xl:flex-row-reverse" : ""}
-              border border-white/20 bg-green-900/30 p-6 rounded-lg`}
+              border border-white/20 bg-green-900/10 p-6 rounded-lg hover:bg-green-900/20 hover:border-accent/30 transition-all duration-500 group/card`}
           >
             {/* Slider */}
             <div className="w-full xl:w-1/2">
@@ -174,16 +280,23 @@ const Work = () => {
 
             {/* Details */}
             <div className="w-full xl:w-1/2 text-center xl:text-left z-10">
-              <h6 className="text-white font-semibold uppercase tracking-wider mb-1">
-                {project.category}
-              </h6>
+              <div className="flex items-center justify-center xl:justify-start gap-4 mb-1">
+                <h6 className="text-white font-semibold uppercase tracking-wider">
+                  {project.category}
+                </h6>
+                {project.isPrivate && (
+                  <span className="text-[10px] bg-white/10 text-white/50 px-2 py-0.5 rounded-full border border-white/20 uppercase tracking-tighter">
+                    Private Repo
+                  </span>
+                )}
+              </div>
               <h2 className="text-white text-3xl font-bold mb-2">
                 {project.title}
               </h2>
               <p className="text-white/70 mb-4">{project.description}</p>
-              <ul className="flex flex-wrap justify-center xl:justify-start gap-3 mb-4">
+              <ul className="flex flex-wrap justify-center xl:justify-start gap-3 mb-6">
                 {project.stack.map((item, idx) => (
-                  <li key={idx} className="text-accent text-lg font-medium">
+                  <li key={idx} className="bg-white/5 border border-white/10 px-3 py-1 rounded-full text-accent text-sm font-medium hover:bg-accent/10 hover:border-accent transition-all duration-300">
                     {item.name}
                   </li>
                 ))}
@@ -211,13 +324,18 @@ const Work = () => {
                       <Link
                         href={project.github}
                         target="_blank"
-                        className="w-[50px] h-[50px] rounded-full bg-white/10 flex justify-center items-center group"
+                        className="w-[50px] h-[50px] rounded-full bg-white/10 flex justify-center items-center group relative overflow-hidden"
                       >
-                        <BsGithub className="text-white text-2xl group-hover:text-accent" />
+                        <BsGithub className={`text-white text-2xl group-hover:text-accent ${project.isPrivate ? "opacity-50" : ""}`} />
+                        {project.isPrivate && (
+                          <div className="absolute inset-0 flex items-center justify-center bg-black/20">
+                            <div className="w-full h-[1px] bg-white/30 rotate-45 absolute" />
+                          </div>
+                        )}
                       </Link>
                     </TooltipTrigger>
                     <TooltipContent>
-                      <p>GitHub Repo</p>
+                      <p>{project.isPrivate ? "Private Repo (View Profile)" : "GitHub Repo"}</p>
                     </TooltipContent>
                   </Tooltip>
                 </TooltipProvider>

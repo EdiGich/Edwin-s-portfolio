@@ -5,6 +5,7 @@ import { FiDownload } from 'react-icons/fi';
 import Social from '@/components/Social';
 import Photo from '@/components/Photo';
 import Stats from '@/components/Stats';
+import Frameworks from '@/components/Frameworks';
 
 const Home = () => {
   return (
@@ -19,7 +20,7 @@ const Home = () => {
               <span className="text-accent">Edwin Gichira</span>
             </h1>
             <p className="max-w-[500px] mb-5 text-white/80">
-              I am a software developer with experience in building web and mobile applications.
+              I specialize in bridging the gap between innovative technology and business efficiency, crafting high-performance web and mobile solutions tailored for growth.
             </p>
             {/* btn and socials */}
             <div className="flex flex-col xl:flex-row items-center gap-8">
@@ -49,6 +50,9 @@ const Home = () => {
         </div>
       </div>
       <Stats />
+      <div className="mt-4">
+        <Frameworks />
+      </div>
     </section>
   );
 };

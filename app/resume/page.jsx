@@ -58,6 +58,12 @@ const experience = {
   description: "I have built web applications in Django and in Next.js.",
   items: [
     {
+      company: "Naican Technologies",
+      position: "Founder & Lead Developer",
+      duration: "Feb 2026 - Present",
+      description: "Providing GEO-optimized web development and IT consulting. Specialized in building high-performance modern monoliths using Next.js and Django for local businesses."
+    },
+    {
       company: "Close the Gap Kenya",
       position: "Operations Intern",
       duration: "May 2025 - Dec 2025",
@@ -103,16 +109,26 @@ const skills = {
   title: "Skills",
   description:
     "I have gained skills working with web technologies like Django, React.js, and Next.js. I have also worked with Flutter and Kotlin for mobile app development.",
-  skillsList: [
-    { icon: <FaHtml5 />, name: "html5" },
-    { icon: <FaCss3 />, name: "css 3" },
-    { icon: <FaJs />, name: "javascript" },
-    { icon: <FaReact />, name: "react.js" },
-    { icon: <FaNodeJs />, name: "node.js" },
-    { icon: <SiNextdotjs />, name: "next.js" },
-    { icon: <SiTailwindcss />, name: "tailwind.css" },
-    { icon: <FaFigma />, name: "figma" },
-    { icon: <SiFlutter />, name: "Flutter & Dart" },
+  categories: [
+    {
+      name: "Development",
+      skills: [
+        { icon: <FaHtml5 />, name: "html5" },
+        { icon: <FaCss3 />, name: "css 3" },
+        { icon: <FaJs />, name: "javascript" },
+        { icon: <FaReact />, name: "react.js" },
+        { icon: <FaNodeJs />, name: "node.js" },
+        { icon: <SiNextdotjs />, name: "next.js" },
+        { icon: <SiTailwindcss />, name: "tailwind.css" },
+        { icon: <SiFlutter />, name: "Flutter & Dart" },
+      ],
+    },
+    {
+      name: "Tools & Design",
+      skills: [
+        { icon: <FaFigma />, name: "figma" },
+      ],
+    },
   ],
   OtherSkills: [
     { name: "Proficient in Linux & Windows Operating Systems" },
@@ -164,7 +180,7 @@ const Resume = () => {
                     {experience.items.map((item, index) => (
                       <li
                         key={index}
-                        className="bg-[#1a1a1e] p-4 rounded-lg flex flex-col items-center xl:items-start gap-1"
+                        className="bg-[#1a1a1e] p-4 rounded-lg flex flex-col items-center xl:items-start gap-1 hover:scale-[1.02] hover:bg-[#202025] transition-all duration-300 border border-transparent hover:border-accent/20"
                       >
                         <span className="text-accent">{item.duration}</span>
                         <h4 className="text-lg text-white">{item.position}</h4>
@@ -204,7 +220,7 @@ const Resume = () => {
                     {education.items.map((item, index) => (
                       <li
                         key={index}
-                        className="bg-[#1a1a1e] p-4 rounded-lg flex flex-col items-center xl:items-start gap-1"
+                        className="bg-[#1a1a1e] p-4 rounded-lg flex flex-col items-center xl:items-start gap-1 hover:scale-[1.02] hover:bg-[#202025] transition-all duration-300 border border-transparent hover:border-accent/20"
                       >
                         <span className="text-accent">{item.duration}</span>
                         <h4 className="text-lg text-white">{item.degree}</h4>
@@ -230,24 +246,33 @@ const Resume = () => {
                 <p className="max-w-[600px] text-white/60 mx-auto xl:mx-0 text-center xl:text-left">
                   {skills.description}
                 </p>
-                <ul className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-4 mt-4">
-                  {skills.skillsList.map((skill, index) => (
-                    <li key={index}>
-                      <TooltipProvider delayDuration={100}>
-                        <Tooltip>
-                          <TooltipTrigger className="w-full h-[120px] bg-[#1a1a1e] rounded-lg flex justify-center items-center group">
-                            <div className="text-4xl group-hover:text-accent transition-all duration-300">
-                              {skill.icon}
-                            </div>
-                          </TooltipTrigger>
-                          <TooltipContent>
-                            <p className="capitalize">{skill.name}</p>
-                          </TooltipContent>
-                        </Tooltip>
-                      </TooltipProvider>
-                    </li>
+                <div className="space-y-8 mt-6">
+                  {skills.categories.map((category, catIndex) => (
+                    <div key={catIndex}>
+                      <h4 className="text-sm uppercase tracking-widest text-white/40 mb-4 px-1">
+                        {category.name}
+                      </h4>
+                      <ul className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-4">
+                        {category.skills.map((skill, index) => (
+                          <li key={index}>
+                            <TooltipProvider delayDuration={100}>
+                              <Tooltip>
+                                <TooltipTrigger className="w-full h-[100px] bg-[#1a1a1e] rounded-lg flex justify-center items-center group border border-transparent hover:border-accent/30 transition-all duration-300">
+                                  <div className="text-3xl group-hover:text-accent transition-all duration-300">
+                                    {skill.icon}
+                                  </div>
+                                </TooltipTrigger>
+                                <TooltipContent>
+                                  <p className="capitalize">{skill.name}</p>
+                                </TooltipContent>
+                              </Tooltip>
+                            </TooltipProvider>
+                          </li>
+                        ))}
+                      </ul>
+                    </div>
                   ))}
-                </ul>
+                </div>
 
                 <h3 className="text-xl mt-5 font-semibold text-white text-center">
                   More skills;
