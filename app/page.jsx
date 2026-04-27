@@ -6,11 +6,12 @@ import Social from '@/components/Social';
 import Photo from '@/components/Photo';
 import Stats from '@/components/Stats';
 import Frameworks from '@/components/Frameworks';
+import LiquidGradient from '@/components/LiquidGradient';
 
 const Home = () => {
   return (
-    <section className="h-full">
-      <div className="container h-full">
+    <section className="h-[calc(100vh-80px)] flex flex-col overflow-hidden">
+      <div className="container">
         <div className="flex flex-col xl:flex-row items-center my-8 justify-between xl:pt-0 xl:pb-1">
           {/* text */}
           <div className="text-center xl:text-left order-2 xl:order-none">
@@ -50,9 +51,8 @@ const Home = () => {
         </div>
       </div>
       <Stats />
-      <div className="mt-4">
-        <Frameworks />
-      </div>
+      <Frameworks />
+      <LiquidGradient />
     </section>
   );
 };
