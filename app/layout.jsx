@@ -7,6 +7,7 @@ import PageTransition from "@/components/PageTransition";
 import StairTransition from "@/components/StairTransition";
 import ScrollProgress from "@/components/ScrollProgress";
 import BackToTop from "@/components/BackToTop";
+import ChatBot from "@/components/chat/chat-bot";
 
 const jetbrainsMono = JetBrains_Mono({
   subsets: ["latin"],
@@ -28,6 +29,7 @@ export default function RootLayout({ children }) {
         <StairTransition />
         <PageTransition>{children}</PageTransition>
         <BackToTop />
+        <ChatBot />
       </body>
     </html>
   );

@@ -55,33 +55,27 @@ const about = {
 const experience = {
   icon: "/assets/resume/icons/badge.svg",
   title: "Experience",
-  description: "I have built web applications in Django and in Next.js.",
+  description: "Freelance software engineer building web and mobile solutions with React, Next.js, Flutter, and Django.",
   items: [
     {
-      company: "Naican Technologies",
-      position: "Founder & Lead Developer",
+      company: "Self-Employed",
+      position: "Freelance Technical Consultant and Web Developer",
       duration: "Feb 2026 - Present",
-      description: "Providing GEO-optimized web development and IT consulting. Specialized in building high-performance modern monoliths using Next.js and Django for local businesses."
     },
     {
-      company: "Close the Gap Kenya",
-      position: "Operations Intern",
-      duration: "May 2025 - Dec 2025",
+      company: "Circular Economy Hub (CEH) – Close the Gap",
+      position: "IT Intern",
+      duration: "May 2025 - Nov 2025",
     },
     {
-      company: "Delicious Tumaini Caterers",
-      position: "Web Developer",
-      duration: "September 2024 - April 2025",
-    },
-    {
-      company: "SwahilipotHub Foundation",
-      position: "Tech Trainee",
-      duration: "June 2024 - August 2024",
+      company: "Swahilipot Hub Foundation",
+      position: "Volunteer Developer",
+      duration: "May 2024 - Aug 2024",
     },
     {
       company: "Techbiz Limited",
-      position: "Tech Attachee",
-      duration: "May - August 2023",
+      position: "Software Engineering Attaché",
+      duration: "May 2023 - Aug 2023",
     },
   ],
 };
