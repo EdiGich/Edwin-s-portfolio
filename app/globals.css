@@ -52,3 +52,25 @@
   background: transparent;
   /* Track background */
 }
+
+.chat-scrollbar::-webkit-scrollbar {
+  width: 5px;
+}
+
+.chat-scrollbar::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.chat-scrollbar::-webkit-scrollbar-thumb {
+  background: rgba(0, 255, 153, 0.25);
+  border-radius: 999px;
+}
+
+.chat-scrollbar::-webkit-scrollbar-thumb:hover {
+  background: rgba(0, 255, 153, 0.5);
+}
+
+.chat-scrollbar {
+  scrollbar-width: thin;
+  scrollbar-color: rgba(0, 255, 153, 0.25) transparent;
+}

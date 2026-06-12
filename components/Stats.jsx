@@ -30,9 +30,9 @@ const Stats = () => {
               >
                 <CountUp
                   end={item.num}
-                  duration={5}
-                  delay={2}
-                  className="text-4xl xl:text-6xl font-extrabold"
+                  duration={3}
+                  delay={1}
+                  className="text-2xl xl:text-4xl font-bold"
                 />
                 <p className={`${item.text.length < 15 ? "max-w-[100px]" : "max-w-[150px]"} leading-snug text-white/80`}>
                   {item.text}

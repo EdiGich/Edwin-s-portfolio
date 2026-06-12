@@ -1,6 +1,6 @@
 "use client";
 
-import { MessageCircle, X } from "lucide-react";
+import { BotMessageSquare, X } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 import { useState, useEffect } from "react";
 
@@ -21,7 +21,7 @@ export default function ChatButton({ isOpen, onClick }) {
   }, [isOpen]);
 
   return (
-    <div className="fixed bottom-6 right-6 z-50">
+    <div className="fixed bottom-24 right-7 z-30">
       <AnimatePresence>
         {!isOpen && (
           <motion.div
@@ -81,7 +81,7 @@ export default function ChatButton({ isOpen, onClick }) {
             animate={{ rotate: isOpen ? 90 : 0 }}
             transition={{ duration: 0.2 }}
           >
-            {isOpen ? <X size={24} /> : <MessageCircle size={24} />}
+            {isOpen ? <X size={24} /> : <BotMessageSquare size={24} />}
           </motion.div>
         </motion.button>
       </motion.div>

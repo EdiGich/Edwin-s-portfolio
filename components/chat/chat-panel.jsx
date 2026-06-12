@@ -1,11 +1,13 @@
 "use client";
 
 import { useEffect, useRef } from "react";
-import { X, Bot } from "lucide-react";
+import { X, Sparkles } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 import ChatMessage from "./chat-message";
 import ChatInput from "./chat-input";
 import SuggestedQuestions from "./suggested-questions";
+
+const aiColors = ["#a855f7", "#06b6d4", "#22c55e", "#a855f7"];
 
 export default function ChatPanel({
   isOpen,
@@ -31,15 +33,22 @@ export default function ChatPanel({
           animate={{ opacity: 1, y: 0, scale: 1 }}
           exit={{ opacity: 0, y: 20, scale: 0.95 }}
           transition={{ duration: 0.2, ease: "easeOut" }}
-          className="fixed bottom-24 right-6 z-40 w-[360px] max-w-[calc(100vw-2rem)] max-h-[600px] h-[500px] bg-[#1c2c22] border border-white/10 rounded-2xl shadow-2xl flex flex-col overflow-hidden"
+          className="fixed bottom-24 right-7 z-40 w-[360px] max-w-[calc(100vw-2rem)] max-h-[600px] h-[500px] bg-black/50 backdrop-blur-2xl border border-white/[0.06] rounded-2xl shadow-2xl shadow-black/50 flex flex-col overflow-hidden"
         >
-          <div className="flex items-center justify-between px-5 py-4 border-b border-white/10 shrink-0">
+          {/* Glass highlight */}
+          <div className="absolute inset-0 rounded-2xl pointer-events-none bg-gradient-to-b from-white/[0.04] to-transparent" />
+
+          <div className="relative flex items-center justify-between px-5 py-4 border-b border-white/[0.06] shrink-0 bg-white/[0.02]">
             <div className="flex items-center gap-3">
-              <div className="w-8 h-8 rounded-full bg-accent/20 flex items-center justify-center">
-                <Bot size={16} className="text-accent" />
-              </div>
+              <motion.div
+                animate={{ color: aiColors, scale: [1, 1.15, 1] }}
+                transition={{ duration: 3, repeat: Infinity, ease: "easeInOut" }}
+                className="w-8 h-8 rounded-full bg-white/5 flex items-center justify-center"
+              >
+                <Sparkles size={16} />
+              </motion.div>
               <div>
-                <h3 className="text-sm font-semibold text-white">
+                <h3 className="text-sm font-semibold text-white/90">
                   Edwin AI Assistant
                 </h3>
                 <p className="text-[10px] text-white/40">
@@ -56,10 +65,10 @@ export default function ChatPanel({
             </button>
           </div>
 
-          <div className="flex-1 overflow-y-auto px-4 py-4 scrollbar-thin">
+          <div className="relative flex-1 overflow-y-auto px-4 py-4 chat-scrollbar">
             {!hasStarted ? (
               <div className="flex flex-col items-center justify-center h-full text-center">
-                <Bot size={36} className="text-accent/60 mb-3" />
+                <SuggestedQuestions onSelect={onSend} />
               </div>
             ) : (
               messages.map((msg, i) => (
@@ -68,8 +77,6 @@ export default function ChatPanel({
             )}
             <div ref={messagesEndRef} />
           </div>
-
-          {!hasStarted && <SuggestedQuestions onSelect={onSend} />}
 
           <ChatInput onSend={onSend} disabled={isStreaming} />
         </motion.div>

@@ -7,7 +7,7 @@ const frameworks = [
   {
     name: "Next.js",
     icon: <SiNextdotjs />,
-    sub: "(React, Node, Tailwind)",
+    sub: "",
   },
   {
     name: "Django",
@@ -28,7 +28,7 @@ const Frameworks = () => {
         <motion.div 
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ delay: 2.6, duration: 0.5 }}
+          transition={{ delay: 1.2, duration: 0.5 }}
           className="flex flex-col xl:flex-row items-center justify-center gap-8 xl:gap-16"
         >
           <div className="text-white/60 text-sm uppercase tracking-[2px] font-semibold">

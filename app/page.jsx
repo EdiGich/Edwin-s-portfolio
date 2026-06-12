@@ -1,5 +1,5 @@
 import { Button } from '@/components/ui/button';
-import { FiDownload } from 'react-icons/fi';
+import Link from 'next/link';
 
 //components
 import Social from '@/components/Social';
@@ -14,25 +14,24 @@ const Home = () => {
         <div className="flex flex-col xl:flex-row items-center my-8 justify-between xl:pt-0 xl:pb-1">
           {/* text */}
           <div className="text-center xl:text-left order-2 xl:order-none">
-            <span className="text-xl">Software Developer</span>
+            <span className="text-xl">Full-Stack Developer</span>
             <h1 className="h2 mb-2">
-              Hello, I am <br />
-              <span className="text-accent">Edwin Gichira</span>
+              Building AI-powered <br />digital solutions
             </h1>
+            <h2 className="text-accent text-3xl xl:text-4xl font-semibold mb-4">
+              Edwin Gichira
+            </h2>
             <p className="max-w-[500px] mb-5 text-white/80">
               I specialize in bridging the gap between innovative technology and business efficiency, crafting high-performance web and mobile solutions tailored for growth.
             </p>
             {/* btn and socials */}
-            <div className="flex flex-col xl:flex-row items-center gap-8">
-              <button
-                variant="outline"
-                size="lg"
-                className="uppercase flex items-center gap-2"
-              >
-                {/* DOWNLOAD RESUME */}
-                {/* <span>Download CV</span>
-                <FiDownload className="text-xl" /> */}
-              </button>
+            <div className="flex flex-col xl:flex-row items-center gap-4">
+              <Button variant="outline" size="lg" asChild>
+                <Link href="/work">View My Work</Link>
+              </Button>
+              <Button variant="default" size="lg" asChild>
+                <Link href="/contact">Get in Touch</Link>
+              </Button>
               <div className="mb-8 xl:mb-0">
                 <Social
                   containerStyles="flex gap-6"
@@ -49,10 +48,10 @@ const Home = () => {
           </div>
         </div>
       </div>
-      <Stats />
       <div className="mt-4">
         <Frameworks />
       </div>
+      <Stats />
     </section>
   );
 };
