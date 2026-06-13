@@ -10,8 +10,9 @@ datasource db {
 model ChatLog {
   id          String   @id @default(cuid())
   sessionId   String
-  userMessage String
-  category    String?
+  userMessage       String
+  assistantResponse String?
+  category          String?
   createdAt   DateTime @default(now())
 
   @@index([sessionId])

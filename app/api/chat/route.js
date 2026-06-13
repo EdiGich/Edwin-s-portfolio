@@ -1,6 +1,6 @@
 import { GoogleGenerativeAI } from "@google/generative-ai";
 import { systemPrompt } from "@/lib/knowledge-base";
-import { logChat } from "@/lib/chat-logger";
+import { logChat, updateChatWithResponse } from "@/lib/chat-logger";
 
 export async function POST(request) {
   try {
@@ -21,8 +21,9 @@ export async function POST(request) {
       );
     }
 
+    let chatLog = null;
     if (sessionId) {
-      logChat({
+      chatLog = await logChat({
         sessionId,
         userMessage: messages[messages.length - 1]?.content || "",
       });
@@ -47,10 +48,12 @@ export async function POST(request) {
     const stream = new ReadableStream({
       async start(controller) {
         const encoder = new TextEncoder();
+        const fullResponseParts = [];
         try {
           for await (const chunk of result.stream) {
             const chunkText = chunk.text();
             if (chunkText) {
+              fullResponseParts.push(chunkText);
               controller.enqueue(encoder.encode(chunkText));
             }
           }
@@ -59,9 +62,14 @@ export async function POST(request) {
           const message = isRateLimit
             ? "The assistant is temporarily unavailable due to high demand. Please try again in a few moments."
             : "I apologize, but I'm having trouble processing your request right now. Please try again later.";
+          fullResponseParts.push(message);
           controller.enqueue(encoder.encode(message));
         } finally {
           controller.close();
+          const fullResponse = fullResponseParts.join("");
+          if (chatLog?.id && fullResponse) {
+            updateChatWithResponse({ chatLogId: chatLog.id, assistantResponse: fullResponse });
+          }
         }
       },
     });
