@@ -6,6 +6,7 @@ import Social from '@/components/Social';
 import Photo from '@/components/Photo';
 import Stats from '@/components/Stats';
 import Frameworks from '@/components/Frameworks';
+import Events from '@/components/Events';
 
 const Home = () => {
   return (
@@ -52,6 +53,7 @@ const Home = () => {
         <Frameworks />
       </div>
       <Stats />
+      <Events />
     </section>
   );
 };

@@ -21,6 +21,10 @@ const links = [
     path: '/work',
   },
   {
+    name: 'events',
+    path: '/#events',
+  },
+  {
     name: 'contact',
     path: '/contact',
   },
@@ -28,7 +32,15 @@ const links = [
 
 const Nav = () => {
   const pathname = usePathname();
-  console.log(pathname);
+
+  const handleClick = (e, link) => {
+    if (link.name === 'events' && pathname === '/') {
+      e.preventDefault();
+      document.getElementById('events')?.scrollIntoView({ behavior: 'smooth' });
+      window.location.hash = 'events';
+    }
+  };
+
   return (
     <nav className="flex gap-8">
       {links.map((link, index) => {
@@ -36,6 +48,7 @@ const Nav = () => {
           <Link
             href={link.path}
             key={index}
+            onClick={(e) => handleClick(e, link)}
             className={`${
               link.path === pathname && 'text-accent border-b-2 border-accent'
             } capitalize font-medium hover:text-accent transition-all`}

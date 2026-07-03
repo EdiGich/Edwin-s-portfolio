@@ -24,6 +24,10 @@ const Links = [
     path: '/work',
   },
   {
+    name: 'events',
+    path: '/#events',
+  },
+  {
     name: 'contact',
     path: '/contact',
   },
@@ -31,6 +35,15 @@ const Links = [
 
 const MobileNav = () => {
   const pathname = usePathname();
+
+  const handleClick = (e, link) => {
+    if (link.name === 'events' && pathname === '/') {
+      e.preventDefault();
+      document.getElementById('events')?.scrollIntoView({ behavior: 'smooth' });
+      window.location.hash = 'events';
+    }
+  };
+
   return (
     <Sheet>
       <SheetTrigger className="flex justify-center items-center">
@@ -52,6 +65,7 @@ const MobileNav = () => {
               <Link
                 href={link.path}
                 key={index}
+                onClick={(e) => handleClick(e, link)}
                 className={` ${
                   link.path === pathname &&
                   'text-accent border-b-2 border-accent'
