@@ -24,7 +24,7 @@ const Photo = () => {
           className="absolute inset-0 grid place-items-center mix-blend-lighten "
         >
           <Image
-            src="/assets/1715224078870.png"
+            src="/assets/profile.png"
             priority
             quality={100}
             width={290}
