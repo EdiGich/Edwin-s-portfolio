@@ -21,7 +21,8 @@ const Photo = () => {
             opacity: 1,
             transition: { delay: 0.8, duration: 0.4, ease: "easeInOut" },
           }}
-          className="absolute inset-0 grid place-items-center mix-blend-lighten "
+          className="absolute inset-0 grid place-items-center mix-blend-lighten"
+          onContextMenu={(e) => e.preventDefault()}
         >
           <Image
             src="/assets/profile.png"
@@ -30,7 +31,8 @@ const Photo = () => {
             width={290}
             height={290}
             alt=""
-            className="object-cover rounded-full"
+            draggable={false}
+            className="object-cover rounded-full select-none"
           />
         </motion.div>
 
