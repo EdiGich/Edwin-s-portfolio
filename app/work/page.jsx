@@ -40,7 +40,7 @@ const projects = [
   },
   {
     num: "02",
-    category: "Full-Stack",
+    category: "AMD Dev Cloud Hackathon 2026 & GDG Pwani AI Hackathon 2026.",
     title: "Farmi Pal",
     description:
       "An AI-powered agricultural assistant for Kenyan farmers, providing market prices, negotiation scripts, and localized farming lessons.",
