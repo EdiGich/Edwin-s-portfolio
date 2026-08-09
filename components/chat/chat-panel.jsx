@@ -1,13 +1,11 @@
 "use client";
 
 import { useEffect, useRef } from "react";
-import { X, Sparkles } from "lucide-react";
+import { X } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 import ChatMessage from "./chat-message";
 import ChatInput from "./chat-input";
 import SuggestedQuestions from "./suggested-questions";
-
-const aiColors = ["#a855f7", "#06b6d4", "#22c55e", "#a855f7"];
 
 export default function ChatPanel({
   isOpen,
@@ -40,13 +38,6 @@ export default function ChatPanel({
 
           <div className="relative flex items-center justify-between px-5 py-4 border-b border-white/[0.06] shrink-0 bg-white/[0.02]">
             <div className="flex items-center gap-3">
-              <motion.div
-                animate={{ color: aiColors, scale: [1, 1.15, 1] }}
-                transition={{ duration: 3, repeat: Infinity, ease: "easeInOut" }}
-                className="w-8 h-8 rounded-full bg-white/5 flex items-center justify-center"
-              >
-                <Sparkles size={16} />
-              </motion.div>
               <div>
                 <h3 className="text-sm font-semibold text-white/90">
                   Edwin AI Assistant

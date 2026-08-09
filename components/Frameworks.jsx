@@ -1,22 +1,22 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { SiNextdotjs, SiDjango, SiFlutter, SiReact, SiNodedotjs, SiTailwindcss } from "react-icons/si";
+import { SiNextdotjs, SiDjango, SiFlutter } from "react-icons/si";
 
 const frameworks = [
   {
     name: "Next.js",
-    icon: <SiNextdotjs />,
+    icon: <SiNextdotjs aria-hidden="true" />,
     sub: "",
   },
   {
     name: "Django",
-    icon: <SiDjango />,
+    icon: <SiDjango aria-hidden="true" />,
     sub: "Python Backend",
   },
   {
     name: "Flutter",
-    icon: <SiFlutter />,
+    icon: <SiFlutter aria-hidden="true" />,
     sub: "Mobile Apps",
   },
 ];
