@@ -186,7 +186,7 @@ const projects = [
   },
 ];
 
-const ProjectSlider = ({ images }) => {
+const ProjectSlider = ({ images, title }) => {
   const [currentIndex, setCurrentIndex] = useState(0);
 
   const nextSlide = () => {
@@ -214,7 +214,7 @@ const ProjectSlider = ({ images }) => {
                 width={600}
                 height={400}
                 className="w-full max-h-[400px] object-contain rounded-lg"
-                alt={`Slide ${idx + 1}`}
+                alt={`${title} screenshot ${idx + 1}`}
               />
             </div>
           ))}
@@ -226,21 +226,25 @@ const ProjectSlider = ({ images }) => {
         <>
           <button
             onClick={prevSlide}
+            aria-label="Previous slide"
             className="absolute left-2 top-1/2 -translate-y-1/2 bg-black/40 p-2 rounded-full hover:opacity-90"
           >
-            <BsChevronLeft className="text-white text-xl" />
+            <BsChevronLeft aria-hidden="true" className="text-white text-xl" />
           </button>
           <button
             onClick={nextSlide}
+            aria-label="Next slide"
             className="absolute right-2 top-1/2 -translate-y-1/2 bg-black/40 p-2 rounded-full hover:opacity-90"
           >
-            <BsChevronRight className="text-white text-xl" />
+            <BsChevronRight aria-hidden="true" className="text-white text-xl" />
           </button>
           <div className="flex justify-center mt-3 gap-2">
             {images.map((_, idx) => (
               <button
                 key={idx}
                 onClick={() => setCurrentIndex(idx)}
+                aria-label={`Go to slide ${idx + 1}`}
+                aria-current={currentIndex === idx}
                 className={`w-2 h-2 rounded-full ${currentIndex === idx ? "bg-green-400 w-3 h-3" : "bg-white/50"
                   }`}
               />
@@ -272,7 +276,7 @@ const Work = () => {
           >
             {/* Slider */}
             <div className="w-full xl:w-1/2">
-              <ProjectSlider images={project.images} />
+              <ProjectSlider images={project.images} title={project.title} />
             </div>
 
             {/* Divider Line */}
@@ -308,9 +312,10 @@ const Work = () => {
                       <Link
                         href={project.live}
                         target="_blank"
-                        className="w-[50px] h-[50px] rounded-full bg-white/10 flex justify-center items-center group"
+                        aria-label={`View ${project.title} live`}
+                        className="w-[50px] h-[50px] rounded-full bg-white/10 flex items-center justify-center group"
                       >
-                        <BsArrowUpRight className="text-white text-2xl group-hover:text-accent" />
+                        <BsArrowUpRight aria-hidden="true" className="text-white text-2xl group-hover:text-accent" />
                       </Link>
                     </TooltipTrigger>
                     <TooltipContent>
@@ -324,9 +329,10 @@ const Work = () => {
                       <Link
                         href={project.github}
                         target="_blank"
-                        className="w-[50px] h-[50px] rounded-full bg-white/10 flex justify-center items-center group relative overflow-hidden"
+                        aria-label={`View ${project.title} on GitHub`}
+                        className="w-[50px] h-[50px] rounded-full bg-white/10 flex items-center justify-center group relative overflow-hidden"
                       >
-                        <BsGithub className={`text-white text-2xl group-hover:text-accent ${project.isPrivate ? "opacity-50" : ""}`} />
+                        <BsGithub aria-hidden="true" className={`text-white text-2xl group-hover:text-accent ${project.isPrivate ? "opacity-50" : ""}`} />
                         {project.isPrivate && (
                           <div className="absolute inset-0 flex items-center justify-center bg-black/20">
                             <div className="w-full h-[1px] bg-white/30 rotate-45 absolute" />

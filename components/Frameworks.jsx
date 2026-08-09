@@ -47,7 +47,7 @@ const Frameworks = () => {
                   <span className="text-lg font-bold text-white group-hover:text-accent transition-all duration-300">
                     {item.name}
                   </span>
-                  <span className="text-[10px] text-white/40 uppercase tracking-wider">
+                  <span className="text-[10px] text-white/70 uppercase tracking-wider">
                     {item.sub}
                   </span>
                 </div>

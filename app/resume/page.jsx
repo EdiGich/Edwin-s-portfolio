@@ -107,20 +107,20 @@ const skills = {
     {
       name: "Development",
       skills: [
-        { icon: <FaHtml5 />, name: "html5" },
-        { icon: <FaCss3 />, name: "css 3" },
-        { icon: <FaJs />, name: "javascript" },
-        { icon: <FaReact />, name: "react.js" },
-        { icon: <FaNodeJs />, name: "node.js" },
-        { icon: <SiNextdotjs />, name: "next.js" },
-        { icon: <SiTailwindcss />, name: "tailwind.css" },
-        { icon: <SiFlutter />, name: "Flutter & Dart" },
+        { icon: <FaHtml5 aria-hidden="true" />, name: "html5" },
+        { icon: <FaCss3 aria-hidden="true" />, name: "css 3" },
+        { icon: <FaJs aria-hidden="true" />, name: "javascript" },
+        { icon: <FaReact aria-hidden="true" />, name: "react.js" },
+        { icon: <FaNodeJs aria-hidden="true" />, name: "node.js" },
+        { icon: <SiNextdotjs aria-hidden="true" />, name: "next.js" },
+        { icon: <SiTailwindcss aria-hidden="true" />, name: "tailwind.css" },
+        { icon: <SiFlutter aria-hidden="true" />, name: "Flutter & Dart" },
       ],
     },
     {
       name: "Tools & Design",
       skills: [
-        { icon: <FaFigma />, name: "figma" },
+        { icon: <FaFigma aria-hidden="true" />, name: "figma" },
       ],
     },
   ],
@@ -243,7 +243,7 @@ const Resume = () => {
                 <div className="space-y-8 mt-6">
                   {skills.categories.map((category, catIndex) => (
                     <div key={catIndex}>
-                      <h4 className="text-sm uppercase tracking-widest text-white/40 mb-4 px-1">
+                      <h4 className="text-sm uppercase tracking-widest text-white/70 mb-4 px-1">
                         {category.name}
                       </h4>
                       <ul className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-4">
@@ -251,7 +251,10 @@ const Resume = () => {
                           <li key={index}>
                             <TooltipProvider delayDuration={100}>
                               <Tooltip>
-                                <TooltipTrigger className="w-full h-[100px] bg-[#1a1a1e] rounded-lg flex justify-center items-center group border border-transparent hover:border-accent/30 transition-all duration-300">
+                                <TooltipTrigger
+                                  aria-label={skill.name}
+                                  className="w-full h-[100px] bg-[#1a1a1e] rounded-lg flex justify-center items-center group border border-transparent hover:border-accent/30 transition-all duration-300"
+                                >
                                   <div className="text-3xl group-hover:text-accent transition-all duration-300">
                                     {skill.icon}
                                   </div>

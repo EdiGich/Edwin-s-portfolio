@@ -58,14 +58,14 @@ const Events = () => {
               className="w-10 h-10 rounded-full border border-white/20 flex items-center justify-center text-white/60 hover:text-accent hover:border-accent transition-all duration-300"
               aria-label="Scroll left"
             >
-              <BsChevronLeft className="text-lg" />
+              <BsChevronLeft aria-hidden="true" className="text-lg" />
             </button>
             <button
               onClick={() => scroll("right")}
               className="w-10 h-10 rounded-full border border-white/20 flex items-center justify-center text-white/60 hover:text-accent hover:border-accent transition-all duration-300"
               aria-label="Scroll right"
             >
-              <BsChevronRight className="text-lg" />
+              <BsChevronRight aria-hidden="true" className="text-lg" />
             </button>
           </div>
         </div>
@@ -82,7 +82,7 @@ const Events = () => {
               <div className="bg-accent rounded-xl p-[3px] h-full event-card">
               <div className="bg-[#232329] rounded-xl p-6 h-full flex flex-col">
               <div className="flex items-start justify-between mb-4">
-                <span className="text-xs uppercase tracking-wider text-white/40 bg-white/5 px-3 py-1 rounded-full border border-white/10">
+                <span className="text-xs uppercase tracking-wider text-white/70 bg-white/5 px-3 py-1 rounded-full border border-white/10">
                   {event.date}
                 </span>
                 <span

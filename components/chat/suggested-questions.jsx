@@ -18,7 +18,7 @@ const questions = [
 export default function SuggestedQuestions({ onSelect }) {
   return (
     <div className="px-4 py-3 border-t border-white/[0.06]">
-      <p className="text-xs text-white/30 mb-3 text-center">
+      <p className="text-xs text-white/60 mb-3 text-center">
         Suggested questions
       </p>
       <div className="flex flex-wrap gap-2 justify-center">

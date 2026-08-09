@@ -49,6 +49,7 @@ export default function ChatButton({ isOpen, onClick }) {
       >
         <motion.button
           onClick={onClick}
+          aria-label={isOpen ? "Close chat" : "Open chat"}
           className="relative w-14 h-14 rounded-full bg-gradient-to-br from-accent to-emerald-400 text-primary flex items-center justify-center shadow-xl"
           style={{
             boxShadow: "0 0 12px rgba(34, 197, 94, 0.4)",
@@ -81,7 +82,7 @@ export default function ChatButton({ isOpen, onClick }) {
             animate={{ rotate: isOpen ? 90 : 0 }}
             transition={{ duration: 0.2 }}
           >
-            {isOpen ? <X size={24} /> : <BotMessageSquare size={24} />}
+            {isOpen ? <X aria-hidden="true" size={24} /> : <BotMessageSquare aria-hidden="true" size={24} />}
           </motion.div>
         </motion.button>
       </motion.div>

@@ -92,9 +92,10 @@ const Services = () => {
                 </div>
                 <Link
                   href={service.href}
+                  aria-label={`View ${service.title} work`}
                   className="w-[70px] h-[70px] rounded-full bg-white/10 group-hover:bg-accent transition-all duration-500 flex justify-center items-center hover:-rotate-45"
                 >
-                  <BsArrowDownRight className="text-white text-3xl group-hover:text-primary" />
+                  <BsArrowDownRight aria-hidden="true" className="text-white text-3xl group-hover:text-primary" />
                 </Link>
               </div>
               {/* Title */}

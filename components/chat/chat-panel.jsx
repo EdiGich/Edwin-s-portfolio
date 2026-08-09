@@ -51,7 +51,7 @@ export default function ChatPanel({
                 <h3 className="text-sm font-semibold text-white/90">
                   Edwin AI Assistant
                 </h3>
-                <p className="text-[10px] text-white/40">
+                <p className="text-[10px] text-white/70">
                   Ask me anything about Edwin&apos;s experience, projects,
                   skills, and professional background.
                 </p>
@@ -59,9 +59,10 @@ export default function ChatPanel({
             </div>
             <button
               onClick={onClose}
+              aria-label="Close chat window"
               className="w-7 h-7 rounded-full bg-white/5 hover:bg-white/10 flex items-center justify-center transition-colors duration-200 shrink-0"
             >
-              <X size={14} className="text-white/60" />
+              <X aria-hidden="true" size={14} className="text-white/60" />
             </button>
           </div>
 
