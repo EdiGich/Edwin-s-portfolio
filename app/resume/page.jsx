@@ -58,9 +58,14 @@ const experience = {
   description: "Freelance software engineer building web and mobile solutions with React, Next.js, Flutter, and Django.",
   items: [
     {
-      company: "Self-Employed",
-      position: "Freelance Technical Consultant and Web Developer",
-      duration: "Feb 2026 - Present",
+      company: "TechAI Path",
+      position: "Innovation and Inception Lead",
+      duration: "Jun 2026 - Present",
+      type: "Part-time · 5 mos",
+      location: "Kenya · Hybrid",
+      status: "Present",
+      description: "Technical mentorship.",
+      skills: ["Core Java", "Django", "+3 skills"],
     },
     {
       company: "Circular Economy Hub (CEH) – Close the Gap",
@@ -179,6 +184,21 @@ const Resume = () => {
                         <span className="text-accent">{item.duration}</span>
                         <h4 className="text-lg text-white">{item.position}</h4>
                         <p className="text-white/60">{item.company}</p>
+                        {item.type && (
+                          <p className="text-xs text-white/40 mt-1">{item.type}</p>
+                        )}
+                        {item.location && (
+                          <p className="text-xs text-white/40">{item.location}</p>
+                        )}
+                        {item.status && (
+                          <p className="text-xs text-white/40">{item.status}</p>
+                        )}
+                        {item.description && (
+                          <p className="text-sm text-white/60 mt-2">{item.description}</p>
+                        )}
+                        {item.skills && (
+                          <p className="text-sm text-white/60">{item.skills.join(" · ")}</p>
+                        )}
                       </li>
                     ))}
                   </ul>
