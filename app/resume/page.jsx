@@ -68,6 +68,11 @@ const experience = {
       skills: ["Core Java", "Django", "+3 skills"],
     },
     {
+      company: "Freelance",
+      position: "Freelance Web Development",
+      duration: "Dec 2025 - Present",
+    },
+    {
       company: "Circular Economy Hub (CEH) – Close the Gap",
       position: "IT Intern",
       duration: "May 2025 - Nov 2025",
