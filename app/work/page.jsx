@@ -2,19 +2,12 @@
 import { motion } from "framer-motion";
 import React, { useState } from "react";
 import {
-  BsArrowUpRight,
-  BsGithub,
   BsChevronLeft,
   BsChevronRight,
+  BsGithub,
 } from "react-icons/bs";
-import {
-  Tooltip,
-  TooltipContent,
-  TooltipProvider,
-  TooltipTrigger,
-} from "@/components/ui/tooltip";
-import Link from "next/link";
 import Image from "next/image";
+import Link from "next/link";
 
 const projects = [
   {
@@ -310,23 +303,6 @@ const Work = () => {
                   <Tooltip>
                     <TooltipTrigger asChild>
                       <Link
-                        href={project.live}
-                        target="_blank"
-                        aria-label={`View ${project.title} live`}
-                        className="w-[50px] h-[50px] rounded-full bg-white/10 flex items-center justify-center group"
-                      >
-                        <BsArrowUpRight aria-hidden="true" className="text-white text-2xl group-hover:text-accent" />
-                      </Link>
-                    </TooltipTrigger>
-                    <TooltipContent>
-                      <p>Live Project</p>
-                    </TooltipContent>
-                  </Tooltip>
-                </TooltipProvider>
-                <TooltipProvider delayDuration={100}>
-                  <Tooltip>
-                    <TooltipTrigger asChild>
-                      <Link
                         href={project.github}
                         target="_blank"
                         aria-label={`View ${project.title} on GitHub`}
@@ -346,6 +322,7 @@ const Work = () => {
                   </Tooltip>
                 </TooltipProvider>
               </div>
+
             </div>
           </div>
         ))}
