@@ -6,6 +6,12 @@ import {
   BsChevronRight,
   BsGithub,
 } from "react-icons/bs";
+import {
+  Tooltip,
+  TooltipContent,
+  TooltipProvider,
+  TooltipTrigger,
+} from "@/components/ui/tooltip";
 import Image from "next/image";
 import Link from "next/link";
 
